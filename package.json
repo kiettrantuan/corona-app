@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "next",
-    "build": "next build && next export && npm run build-storybook",
+    "build": "next build && next export && yarn run build-storybook",
     "start": "next start",
     "storybook": "start-storybook",
     "build-storybook": "build-storybook -c .storybook -o public"
