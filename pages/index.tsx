@@ -10,9 +10,8 @@ const HomePage = () => {
                 width: '375px',
                 mx: 'auto',
                 p: '15px',
-                backgroundColor: '#e8e8e8'
+                backgroundColor: 'rgb(243,239,234)'
             }}>
-            Container
             <TabNav/>
             <TabStories/>
         </Box>

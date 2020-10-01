@@ -1,14 +1,11 @@
 import * as React from 'react';
 import { Box, Flex, Card, Image, Heading, Text, Link } from 'rebass';
-// import imgOne from '../images/wear-masks.png';
-// import imgTwo from './images/avoid-crowds.jpg';
 
-// const imgOne = require('../images/wear-masks.png');
 
-const CardImage = ({value}) => {
+const CardImage = () => {
     return (
         <Box width={1/3} marginRight={'15px'}>
-            <Image src={value}
+            <Image src={'https://via.placeholder.com/100'}
                 sx={{
                     width: '100px',
                     height: '100px',
@@ -17,7 +14,7 @@ const CardImage = ({value}) => {
             </Image>
         </Box>
     )
-}
+};
 const CardText = ({heading, body, link}) => {
     return (
         <Box width={2/3}
@@ -27,56 +24,75 @@ const CardText = ({heading, body, link}) => {
                 boxSizing: 'border-box',
                 // overflowWrap: 'break-word'
             }}>
-                <Heading fontSize={'16px'}>{heading}</Heading>
-                <Text fontSize={'12px'} my={'8px'}>{body}</Text>
-                <Link>{link}</Link>
+                <Heading fontFamily={'Helvetica, Arial, sans-serif'} fontSize={'16px'}>{heading}</Heading>
+                <Text 
+                    sx={{
+                        my: '8px',
+                        fontFamily: 'Helvetica, Arial, sans-serif',
+                        fontSize: '12px',
+                        color: 'rgb(121,130,130)',
+                    }}>
+                    {body}
+                </Text>
+                <Link 
+                    sx={{
+                        fontFamily: 'Helvetica, Arial, sans-serif',
+                        cursor:'pointer',
+                        color: '#7DA752'
+                    }}>
+                    {link} &#8594;
+                </Link>
 
         </Box>
     )
-}
+};
+
+const Data = [
+    {
+        id: '1',
+        heading: 'Wear a facemask',
+        body: 'You should wear facemask when you are around other people',
+        link: '153 Discussions',
+    },
+    {
+        id: '2',
+        heading: 'Avoid close contact',
+        body: 'Put distance between yourself and other people',
+        link: '127 Discussions',
+    },
+];
 
 const TabStories = () => {
-    const textHeadingOne = 'Wear a facemask';
-    const textHeadingTwo = 'Avoid close contact';
-    const textBodyOne = 'You should wear facemask when you are around other people';
-    const textBodyTwo = 'Put distance between yourself and other people';
-    const textLinkOne = '153 Discussions';
-    const textLinkTwo = '127 Discussions';
+    // const textHeadingOne = 'Wear a facemask';
+    // const textHeadingTwo = 'Avoid close contact';
+    // const textBodyOne = 'You should wear facemask when you are around other people';
+    // const textBodyTwo = 'Put distance between yourself and other people';
+    // const textLinkOne = '153 Discussions';
+    // const textLinkTwo = '127 Discussions';
 
     return (
         <Box>
-            <Card marginBottom={'15px'}>
-                <Flex 
-                    sx={{
-                    padding: '10px',
-                    backgroundColor: '#fff',
-                    alignItems: 'center',
-                    borderRadius: '16px',
-                    }}>
-                    <CardImage value={'imgOne'}/>
-                    <CardText
-                        heading={textHeadingOne}
-                        body={textBodyOne}
-                        link={textLinkOne}/>
-                </Flex>
-            </Card>
-            <Card>
-                <Flex 
-                    sx={{
-                    padding: '10px',
-                    backgroundColor: '#fff',
-                    alignItems: 'center',
-                    borderRadius: '10px',
-                    }}>
-                    <CardImage value={'imgTwo'}/>
-                    <CardText
-                        heading={textHeadingTwo}
-                        body={textBodyTwo}
-                        link={textLinkTwo}/>
-                </Flex>
-            </Card>
+            {Data.map((props) => {
+                return (
+                    <Card marginBottom={'15px'}>
+                        <Flex 
+                            sx={{
+                            padding: '10px',
+                            backgroundColor: '#fff',
+                            alignItems: 'center',
+                            borderRadius: '16px',
+                            }}>
+                            <CardImage />
+                            <CardText
+                                heading={props.heading}
+                                body={props.body}
+                                link={props.link}/>
+                        </Flex>
+                    </Card>
+                )
+            })}
         </Box>
     )
-}
+};
 
 export default TabStories;
