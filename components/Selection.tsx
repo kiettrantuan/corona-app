@@ -12,7 +12,7 @@ const LinkStyle = styled(Link)`
 
 
 
-const TabNav = () => {
+const Selection = () => {
     return (
         <Flex
             sx={{
@@ -63,4 +63,4 @@ const TabNav = () => {
     )
 }
 
-export default TabNav;
+export default Selection;

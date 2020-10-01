@@ -7,7 +7,7 @@
     "dev": "next",
     "build": "next build && next export && yarn run build-storybook",
     "start": "next start",
-    "storybook": "start-storybook",
+    "storybook": "start-storybook -p 3003",
     "build-storybook": "build-storybook -c .storybook -s storybook-static"
   },
   "dependencies": {

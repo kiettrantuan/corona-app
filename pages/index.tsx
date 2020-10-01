@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Box } from 'rebass';
-import TabNav from '../components/TabNav';
-import TabStories from '../components/TabStories';
+import Selection from '../components/Selection';
+import Cards from '../components/Cards';
 
 const HomePage = () => {
     return (
@@ -12,8 +12,8 @@ const HomePage = () => {
                 p: '15px',
                 backgroundColor: 'rgb(243,239,234)'
             }}>
-            <TabNav/>
-            <TabStories/>
+            <Selection/>
+            <Cards/>
         </Box>
     );
 };
