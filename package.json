@@ -8,7 +8,7 @@
     "build": "next build && next export && yarn run build-storybook",
     "start": "next start",
     "storybook": "start-storybook",
-    "build-storybook": "build-storybook -c .storybook -o storybook-static"
+    "build-storybook": "build-storybook -c .storybook -s storybook-static"
   },
   "dependencies": {
     "@emotion/core": "^10.0.35",
