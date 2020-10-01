@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "next",
-    "build": "build-storybook -s public",
+    "build": "next build",
     "start": "next start",
     "storybook": "start-storybook",
     "build-storybook": "build-storybook -s public"
