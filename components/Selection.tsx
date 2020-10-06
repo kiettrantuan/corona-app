@@ -6,14 +6,6 @@ import Cards from './Cards';
 // Add Airbnb Cereal App font
 const webfont = require('./webfont/webfont.module.css');
 
-
-const LinkStyle = styled(Link)`
-    // width: 100%;
-    // text-align: center;
-    font-size: 15px;
-    font-family: 'Airbnb Cereal App Medium';
-    color: rgb(194,194,181);
-`
 const BoxStyle = styled(Box)`
     display: flex;
     align-items: center;
@@ -131,7 +123,7 @@ const Selection = ({
                 {items.map((i) => { 
                     return (
                             <BoxStyle width={1 / 3} onClick={()=>handleSelect(i.key)} selected={i.key === key}>
-                                <LinkStyle>{i.title}</LinkStyle>
+                                <Link>{i.title}</Link>
                             </BoxStyle>
                     )
                 })}
