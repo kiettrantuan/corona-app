@@ -3,7 +3,7 @@ import HomePage from '../pages/index';
 
 
 export default {
-    title: 'App/HomePage',
+    title: 'Pages/HomePage',
     component: HomePage
 }
 

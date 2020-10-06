@@ -56,57 +56,74 @@ export const CardText = ({heading='Title', body='Description', link='#', amount=
                 // overflowWrap: 'break-word'
             }}>
             <HeadingStyle>{heading}</HeadingStyle>
-            <Box width={'100%'} my={2}>
+            <Flex 
+                sx={{
+                    alignItems: 'center',
+                    width: '100%',
+                    height: '50px',
+                    py: '8px',
+                }}>
                 <TextStyle>{body}</TextStyle>
-            </Box>
+            </Flex>
             <LinkStyle href={link}>{amount} Discussions &#8594;</LinkStyle>
         </Box>
     )
 };
 
-const Data = [
-    {
-        id: '1',
-        heading: 'Wear a facemask',
-        body: 'You should wear facemask when you are around other people',
-        link: '#',
-        amount: 53,
-        imgsrc: 'https://via.placeholder.com/100',
-    },
-    {
-        id: '2',
-        heading: 'Avoid close contact',
-        body: 'Put distance between yourself and other people',
-        link: '#',
-        amount: 127,
-        imgsrc: 'https://via.placeholder.com/50',
-    },
-    {
-        id: '3',
-        heading: 'Empty',
-        body: '',
-        link: '#',
-        imgsrc: 'https://via.placeholder.com/500',
-    },
-    {
-        id: '4',
-        heading: 'Too much',
-        body: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,',
-        link: '#',
-        imgsrc: 'https://via.placeholder.com/100x500',
-    },
-    {
-        id: '5',
-        heading: 'Too much 2',
-        body: 'Loremipsumdolorsitamet,consectetueradipiscingelitAeneancommodoligulaegetdolor.Aeneanmassa.Cumsociisnatoquepenatibusetmagnisdisparturientmontes,nasceturridiculusmus',
-        link: '#',
-        imgsrc: 'https://via.placeholder.com/500x100',
-    },
-];
+// const Data = [
+//     {
+//         id: '1',
+//         heading: 'Wear a facemask',
+//         body: 'You should wear facemask when you are around other people',
+//         link: '#',
+//         amount: 53,
+//         imgsrc: 'https://via.placeholder.com/100',
+//     },
+//     {
+//         id: '2',
+//         heading: 'Avoid close contact',
+//         body: 'Put distance between yourself and other people',
+//         link: '#',
+//         amount: 127,
+//         imgsrc: 'https://via.placeholder.com/50',
+//     },
+//     {
+//         id: '3',
+//         heading: 'Empty',
+//         body: '',
+//         link: '#',
+//         amount: 0,
+//         imgsrc: 'https://via.placeholder.com/500',
+//     },
+//     {
+//         id: '4',
+//         heading: 'Too much',
+//         body: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,',
+//         link: '#',
+//         amount: 0,
+//         imgsrc: 'https://via.placeholder.com/100x500',
+//     },
+//     {
+//         id: '5',
+//         heading: 'Too much 2',
+//         body: 'Loremipsumdolorsitamet,consectetueradipiscingelitAeneancommodoligulaegetdolor.Aeneanmassa.Cumsociisnatoquepenatibusetmagnisdisparturientmontes,nasceturridiculusmus',
+//         link: '#',
+//         amount: 0,
+//         imgsrc: 'https://via.placeholder.com/500x100',
+//     },
+// ];
 
-const Cards = () => {
+const Cards = ({Data = [{
+        id: '1',
+        heading: 'Title',
+        body: 'Description',
+        link: '#',
+        amount: 0,
+        imgsrc: 'https://via.placeholder.com/100',
+    }]}) => {
+        
     return (
-        <Box>
+        <>
             {Data.map((props) => {
                 return (
                     <Card marginBottom={'15px'}>
@@ -128,7 +145,7 @@ const Cards = () => {
                     </Card>
                 )
             })}
-        </Box>
+        </>
     )
 };
 
