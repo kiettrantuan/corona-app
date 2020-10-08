@@ -14,4 +14,4 @@ eslint:
   stage: lint
   script:
     - yarn add eslint
-    - yarn eslint
+    - "yarn eslint"
