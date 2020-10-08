@@ -1,7 +1,4 @@
 image: node:latest
-
-stage:
-  - lint
   
 # This folder is cached between builds
 # http://docs.gitlab.com/ce/ci/yaml/README.html#cache
@@ -10,8 +7,7 @@ cache:
     - node_modules/
 
 # Job eslint
-lint:
-  stage: lint
+eslint:
   script:
-    - echo "install"
-    # - yarn lint
+    - yarn install
+    - yarn lint
