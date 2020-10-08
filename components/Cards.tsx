@@ -1,17 +1,12 @@
 import * as React from 'react';
 import { Box, Flex, Card, Image, Heading, Text, Link } from 'rebass';
 import styled from '@emotion/styled';
-import WebFont from 'webfontloader';
-
 
 // Add Airbnb Cereal App font
-WebFont.load({
-    custom: {
-        families: ['Airbnb Cereal App Medium', 'Airbnb Cereal App Light','Airbnb Cereal App Bold'],
-        urls: ['./webfont/webfont.module.css']
-    }
-})
-
+import * as webfont from './webfont/webfont.module.css';
+const GlobalStyle = styled('div')`
+    @import url('${webfont}');
+`
 
 const HeadingStyle = styled(Heading)`
     font-family: 'Airbnb Cereal App Bold';
@@ -88,7 +83,7 @@ const Cards = (
     }[]}) => {
         
     return (
-        <>
+        <GlobalStyle>
             {props.Data.map((c) => {
                 return (
                     <Card marginBottom={'15px'} key={c.id}>
@@ -110,7 +105,7 @@ const Cards = (
                     </Card>
                 )
             })}
-        </>
+        </GlobalStyle>
     )
 };
 

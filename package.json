@@ -15,13 +15,11 @@
     "@emotion/core": "^10.0.35",
     "@emotion/styled": "^10.0.27",
     "@types/rebass": "^4.0.7",
-    "@types/webfontloader": "^1.6.32",
     "emotion": "^10.0.27",
     "next": "^9.5.3",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "rebass": "^4.0.7",
-    "webfontloader": "^1.6.28"
+    "rebass": "^4.0.7"
   },
   "devDependencies": {
     "@babel/core": "^7.11.6",
