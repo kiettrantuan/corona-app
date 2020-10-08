@@ -10,7 +10,7 @@ cache:
     - node_modules/
 
 # Job eslint
-eslint:
+lint:
   stage: lint
   script:
     - echo "install"
