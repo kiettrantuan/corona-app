@@ -13,5 +13,5 @@ cache:
 eslint:
   stage: lint
   script:
-    - npm install
+    - echo "install"
     # - yarn lint
