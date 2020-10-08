@@ -8,7 +8,8 @@
     "build": "next build && next export && yarn run build-storybook",
     "start": "next start",
     "storybook": "start-storybook -p 3003",
-    "build-storybook": "build-storybook -c .storybook -s storybook-static"
+    "build-storybook": "build-storybook -c .storybook -s storybook-static",
+    "eslint": "eslint components/*.tsx"
   },
   "dependencies": {
     "@emotion/core": "^10.0.35",
@@ -29,7 +30,17 @@
     "@storybook/react": "^6.0.22",
     "@types/node": "^14.11.2",
     "@types/react": "^16.9.49",
+    "@typescript-eslint/eslint-plugin": "2.x",
+    "@typescript-eslint/parser": "2.x",
+    "babel-eslint": "10.x",
     "babel-loader": "^8.1.0",
+    "eslint": "6.x",
+    "eslint-config-react-app": "^5.2.1",
+    "eslint-plugin-flowtype": "4.x",
+    "eslint-plugin-import": "2.x",
+    "eslint-plugin-jsx-a11y": "6.x",
+    "eslint-plugin-react": "7.x",
+    "eslint-plugin-react-hooks": "2.x",
     "react-is": "^16.13.1",
     "typescript": "^4.0.3"
   }
