@@ -1,10 +1,16 @@
 import * as React from 'react';
 import { Flex, Box, Link } from 'rebass';
 import styled from '@emotion/styled';
+import WebFont from 'webfontloader';
 
 
 // Add Airbnb Cereal App font
-const webfont = require('./webfont/webfont.module.css');
+WebFont.load({
+    custom: {
+        families: ['Airbnb Cereal App Bold', 'Airbnb Cereal App Medium'],
+        urls: ['./webfont/webfont.module.css']
+    }
+})
 
 const BoxStyle = styled(Box)`
     display: flex;
