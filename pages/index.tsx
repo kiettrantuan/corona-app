@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Box } from 'rebass';
 import Selection from '../components/Selection';
-import Cards from '../components/Cards';
+import Card from '../components/Card';
 
 
 const Items = [
@@ -19,7 +19,7 @@ const Items = [
     }
 ]
 
-const PageData = [
+const Data = [
     {
         id: '1',
         heading: 'Title 1.1',
@@ -37,7 +37,7 @@ const PageData = [
         imgsrc: 'https://via.placeholder.com/100x200',
     },
 ]
-const PageData2 = [
+const Data2 = [
     {
         id: '1',
         heading: 'Title 2.1',
@@ -55,7 +55,7 @@ const PageData2 = [
         imgsrc: 'https://via.placeholder.com/200',
     },
 ]
-const PageData3 = [
+const Data3 = [
     {
         id: '1',
         heading: 'Title 3.1',
@@ -91,9 +91,33 @@ const HomePage = () => {
             
             <Selection selectedKey={key} items={Items} onSelect={(k)=>handleSelect(k)}/>
             
-            {key === '1' && <Cards Data={PageData}/>}
-            {key === '2' && <Cards Data={PageData2}/>}
-            {key === '3' && <Cards Data={PageData3}/>}
+            {key === '1' && 
+                Data.map( (props) => {
+                    return (
+                        <Card heading={props.heading} body={props.body} 
+                            link={props.link} amount={props.amount} 
+                            imgsrc={props.imgsrc} key={props.id}/>
+                    )
+                })
+            }
+            {key === '2' && 
+                Data2.map( (props) => {
+                    return (
+                        <Card heading={props.heading} body={props.body} 
+                            link={props.link} amount={props.amount} 
+                            imgsrc={props.imgsrc} key={props.id}/>
+                    )
+                })
+            }
+            {key === '3' && 
+                Data3.map( (props) => {
+                    return (
+                        <Card heading={props.heading} body={props.body} 
+                            link={props.link} amount={props.amount} 
+                            imgsrc={props.imgsrc} key={props.id}/>
+                    )
+                })
+            }
         </Box>
     )
 }

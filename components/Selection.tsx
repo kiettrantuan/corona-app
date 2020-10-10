@@ -2,7 +2,12 @@ import * as React from 'react';
 import { Flex, Box, Link } from 'rebass';
 import styled from '@emotion/styled';
 
-// Add Airbnb Cereal App font
+/* Add Airbnb Cereal App font
+   - Require can be used instead of Import */
+// const webfont = require('./webfont/webfont.module.css');
+/* - File other than .tsx/.ts must be declared as a module in
+.d.ts file in root dir & included in tsconfig.json for Import
+   - In this case: module css declared in styles.d.ts */
 import * as webfont from './webfont/webfont.module.css';
 const GlobalStyle = styled('div')`
     @import url('${webfont}');
