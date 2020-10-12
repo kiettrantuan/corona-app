@@ -8,7 +8,7 @@ export default {
 };
 
 export const Main = () => {
-    const Items = [
+    const ITEMS = [
         {
             key: '1',
             title: 'Prevention',
@@ -23,16 +23,13 @@ export const Main = () => {
         },
     ];
     const [key, setKey] = React.useState('1');
-    const handleSelect = (key: string) => {
-        setKey(key);
-    };
 
     return (
         <Selection
             selectedKey={key}
-            items={Items}
+            items={ITEMS}
             onSelect={(k) => {
-                handleSelect(k);
+                setKey(k);
                 action('Clicked')(`Tab ${k}`);
             }}
         />
