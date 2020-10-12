@@ -3,11 +3,9 @@ import Button from './Button';
 
 export default {
     title: 'Example/Button',
-    component: Button
+    component: Button,
 };
 
 export const normalButton = () => {
-    return (
-        <Button/>
-    )
-}
+    return <Button />;
+};

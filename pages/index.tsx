@@ -3,8 +3,7 @@ import { Box } from 'rebass';
 import Selection from '../components/Selection';
 import Card from '../components/Card';
 
-
-const Items = [
+const ITEMS = [
     {
         key: '1',
         title: 'Prevention',
@@ -16,10 +15,10 @@ const Items = [
     {
         key: '3',
         title: 'Diagnosis',
-    }
-]
+    },
+];
 
-const Data = [
+const DATA = [
     {
         id: '1',
         heading: 'Title 1.1',
@@ -36,8 +35,8 @@ const Data = [
         amount: 12,
         imgsrc: 'https://via.placeholder.com/100x200',
     },
-]
-const Data2 = [
+];
+const DATA_2 = [
     {
         id: '1',
         heading: 'Title 2.1',
@@ -54,8 +53,8 @@ const Data2 = [
         amount: 22,
         imgsrc: 'https://via.placeholder.com/200',
     },
-]
-const Data3 = [
+];
+const DATA_3 = [
     {
         id: '1',
         heading: 'Title 3.1',
@@ -72,54 +71,63 @@ const Data3 = [
         amount: 32,
         imgsrc: 'https://via.placeholder.com/300x200',
     },
-]
+];
 
 const HomePage = () => {
     const [key, setKey] = React.useState('1');
-    const handleSelect = (key: string) => {
-        setKey(key);
-    } 
-    
+
     return (
-        <Box 
+        <Box
             sx={{
                 width: '375px',
                 // mx: 'auto',
                 p: '15px',
-                backgroundColor: 'rgb(243,239,234)'
-            }}>
-            
-            <Selection selectedKey={key} items={Items} onSelect={(k)=>handleSelect(k)}/>
-            
-            {key === '1' && 
-                Data.map( (props) => {
+                backgroundColor: 'rgb(243,239,234)',
+            }}
+        >
+            <Selection selectedKey={key} items={ITEMS} onSelect={setKey} />
+
+            {key === '1' &&
+                DATA.map((props) => {
                     return (
-                        <Card heading={props.heading} body={props.body} 
-                            link={props.link} amount={props.amount} 
-                            imgsrc={props.imgsrc} key={props.id}/>
-                    )
-                })
-            }
-            {key === '2' && 
-                Data2.map( (props) => {
+                        <Card
+                            heading={props.heading}
+                            body={props.body}
+                            link={props.link}
+                            amount={props.amount}
+                            imgsrc={props.imgsrc}
+                            key={props.id}
+                        />
+                    );
+                })}
+            {key === '2' &&
+                DATA_2.map((props) => {
                     return (
-                        <Card heading={props.heading} body={props.body} 
-                            link={props.link} amount={props.amount} 
-                            imgsrc={props.imgsrc} key={props.id}/>
-                    )
-                })
-            }
-            {key === '3' && 
-                Data3.map( (props) => {
+                        <Card
+                            heading={props.heading}
+                            body={props.body}
+                            link={props.link}
+                            amount={props.amount}
+                            imgsrc={props.imgsrc}
+                            key={props.id}
+                        />
+                    );
+                })}
+            {key === '3' &&
+                DATA_3.map((props) => {
                     return (
-                        <Card heading={props.heading} body={props.body} 
-                            link={props.link} amount={props.amount} 
-                            imgsrc={props.imgsrc} key={props.id}/>
-                    )
-                })
-            }
+                        <Card
+                            heading={props.heading}
+                            body={props.body}
+                            link={props.link}
+                            amount={props.amount}
+                            imgsrc={props.imgsrc}
+                            key={props.id}
+                        />
+                    );
+                })}
         </Box>
-    )
-}
+    );
+};
 
 export default HomePage;
