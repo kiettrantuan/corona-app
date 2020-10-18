@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Box } from 'rebass';
 import Selection from '../components/Selection';
-import Card from '../components/Card';
+import { Card, CardProps } from '../components/Card';
 
 const ITEMS = [
     {
@@ -20,7 +20,7 @@ const ITEMS = [
 
 const DATA = [
     {
-        id: '1',
+        key: '1',
         heading: 'Title 1.1',
         body: 'Description 1.1',
         link: '#',
@@ -28,7 +28,7 @@ const DATA = [
         imgsrc: 'https://via.placeholder.com/100',
     },
     {
-        id: '2',
+        key: '2',
         heading: 'Title 1.2',
         body: 'Description 1.2',
         link: '#',
@@ -38,7 +38,7 @@ const DATA = [
 ];
 const DATA_2 = [
     {
-        id: '1',
+        key: '1',
         heading: 'Title 2.1',
         body: 'Description 2.1',
         link: '#',
@@ -46,7 +46,7 @@ const DATA_2 = [
         imgsrc: 'https://via.placeholder.com/200x100',
     },
     {
-        id: '2',
+        key: '2',
         heading: 'Title 2.2',
         body: 'Description 2.2',
         link: '#',
@@ -56,7 +56,7 @@ const DATA_2 = [
 ];
 const DATA_3 = [
     {
-        id: '1',
+        key: '1',
         heading: 'Title 3.1',
         body: 'Description 3.1',
         link: '#',
@@ -64,7 +64,7 @@ const DATA_3 = [
         imgsrc: 'https://via.placeholder.com/300x100',
     },
     {
-        id: '2',
+        key: '2',
         heading: 'Title 3.2',
         body: 'Description 3.2',
         link: '#',
@@ -88,43 +88,16 @@ const HomePage = () => {
             <Selection selectedKey={key} items={ITEMS} onSelect={setKey} />
 
             {key === '1' &&
-                DATA.map((props) => {
-                    return (
-                        <Card
-                            heading={props.heading}
-                            body={props.body}
-                            link={props.link}
-                            amount={props.amount}
-                            imgsrc={props.imgsrc}
-                            key={props.id}
-                        />
-                    );
+                DATA.map((props: CardProps) => {
+                    return <Card {...props} />;
                 })}
             {key === '2' &&
-                DATA_2.map((props) => {
-                    return (
-                        <Card
-                            heading={props.heading}
-                            body={props.body}
-                            link={props.link}
-                            amount={props.amount}
-                            imgsrc={props.imgsrc}
-                            key={props.id}
-                        />
-                    );
+                DATA_2.map((props: CardProps) => {
+                    return <Card {...props} />;
                 })}
             {key === '3' &&
-                DATA_3.map((props) => {
-                    return (
-                        <Card
-                            heading={props.heading}
-                            body={props.body}
-                            link={props.link}
-                            amount={props.amount}
-                            imgsrc={props.imgsrc}
-                            key={props.id}
-                        />
-                    );
+                DATA_3.map((props: CardProps) => {
+                    return <Card {...props} />;
                 })}
         </Box>
     );

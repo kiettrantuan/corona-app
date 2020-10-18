@@ -31,6 +31,7 @@ const LinkStyle = styled(Link)`
 `;
 
 export interface CardProps {
+    key?: string;
     heading: string;
     body: string;
     link: string;
